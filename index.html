@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="/">
+
+    <meta charset="UTF-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="Job Portal - Find your next career opportunity">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Job Portal">
+
+    <link rel="apple-touch-icon" href="icons/Icon-192.png">
+    <link rel="icon" type="image/png" href="favicon.png"/>
+
+    <title>Job Portal</title>
+    <link rel="manifest" href="manifest.json">
+
+    <style>
+        body {
+          margin: 0;
+          padding: 0;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+          background-color: #FAFAFA;
+        }
+
+        .loading-container {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background-color: #FAFAFA;
+        }
+
+        .loader {
+          width: 48px;
+          height: 48px;
+          border: 4px solid #E5E7EB;
+          border-top-color: #6366F1;
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+          to { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+          margin-top: 20px;
+          color: #6B7280;
+          font-size: 16px;
+          font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+<div class="loading-container" id="loading">
+    <div class="loader"></div>
+    <div class="loading-text">Loading Job Portal...</div>
+</div>
+
+<script>
+    window.addEventListener('flutter-first-frame', function () {
+      document.getElementById('loading').style.display = 'none';
+    });
+</script>
+
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
+
+<script>
+    // Your Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBRq9knjlMA5vsim_T2JCBaVlIUm9laO5U",
+      authDomain: "my-career-portal.firebaseapp.com",
+      projectId: "my-career-portal",
+      storageBucket: "my-career-portal.firebasestorage.app",
+      messagingSenderId: "952953741784",
+      appId: "1:952953741784:web:fd6a3eb7eeb0716e02d2ad"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+</script>
+
+<script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
